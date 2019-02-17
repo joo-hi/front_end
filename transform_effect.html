@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>실습문제3</title>
+    <style>
+        body {
+            /*브라우저가 가진 CSS margin : 8px을 제거함*/
+            margin: 0;
+        }
+        #ryan{
+            width: 480px; height: 480px;
+            background-image: url("img5/ryan.gif");
+            position: fixed;
+            top: 50%; left:50%;
+            margin-top: -240px;
+            margin-left: -240px;
+        }
+
+
+        ul {
+            width: 480px; height: 480px;
+            list-style: none; /*none, circle, decimal...*/
+            /*background-color: red;*/
+            margin: 0;
+            padding: 0;
+        }
+
+        li{
+            position: absolute;
+            width: 240px; height:240px;
+            text-align: center;
+            line-height: 240px;
+            color: white;
+            font-size: 50px;
+            /*text-align: center;*/
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        #box_1 {
+            background: #f48fb1;
+            transition: 200ms ease;
+            transform-origin: 50% 0%;
+        }
+
+        #box_1:active {
+            transform: perspective(300px) rotateX(-50deg);
+        }
+
+        #box_2 {
+            left: 240px;
+            background: #ffc1e3;
+            transition: 200ms ease;
+            transform-origin: 100% 50%;
+        }
+
+        #box_2:active {
+            transform: perspective(300px) rotateY(-50deg);
+        }
+
+        #box_3 {
+            bottom: 0;
+            background: #e91e63;
+            transition: 200ms ease;
+            transform-origin: 0% 50%;
+
+        }
+
+        #box_3:active {
+            transform: perspective(300px) rotateY(50deg);
+        }
+
+        #box_4 {
+            left: 240px;
+            top: 240px;
+            background: #bf5f82;
+            transition: 200ms ease;
+            transform-origin: 50% 100%;
+        }
+
+        #box_4:active {
+            transform: perspective(300px) rotateX(50deg);
+        }
+
+
+
+        </style>
+</head>
+
+<body>
+<div id="ryan">
+    <ul>
+        <li id="box_1" >메뉴1</li>
+        <li id="box_2" >메뉴2</li>
+        <li id="box_3" >메뉴3</li>
+        <li id="box_4" >메뉴4</li>
+    </ul>
+</div><!--#box-->
+
+
+</body>
+</html>
