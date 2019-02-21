@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>여러가지 input 요소(회원가입 폼)</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <style>
+        #verticalAlign * {
+            /*
+            인라인레벨들끼리 수직정렬기준을 지정하는 속성
+            */
+            vertical-align: middle;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>회원가입 폼</h1>
+    <!--넘어가는 자원과, 그 경로, 필수로 써줘야 함-->
+    <form method="get" action="서버자원의 경로">
+        <fieldset>
+            <legend>회원가입</legend>
+            <div>
+                <label>이메일
+                <input name="email" type="text" title="이메일은.." placeholder="이메일"
+                       autocomplete="off"/> <!--자동완성 기능 설정 or 해제-->
+                </label>
+            </div>
+            <div>
+
+                <!--
+                라벨요소와 input 간의 연결
+                1) 라벨요소 안에 input을
+                2) input 요소의 id를 label의 for 속성으로
+                -->
+                <label for="pwd">비밀번호</label>
+                <input id="pwd" name="password" type="password" title="" placeholder="비밀번호"/>
+                <!--클릭하면 안 넘어가게-->
+                <button type="button">비밀번호 보기</button>
+            </div>
+            <div id="verticalAlign">
+                <h2>성별</h2>
+                <!-- 성별 선택 -->
+                <input name="gender" id="female" type="radio" value="F" checked/> <!--checked 해놓으면 기본값으로 이미 표시돼 있음-->
+                <label for="female">여성</label>
+                <input name="gender" id="male" type="radio" value="M">
+                <label for="male">남성</label>
+            </div>
+            <div>
+                <h2>취미</h2>
+                <input type="checkbox" name="hobby" id="movie" value="movie"/>
+                <label for="movie">영화보기</label>
+                <input type="checkbox" name="hobby " id="book" value="book"/>
+                <label for="book">책읽기</label>
+                <input type="checkbox" name="hobby" id="swim" value="swim"/>
+                <label for="swim">수영하기</label>
+            </div>
+            <div>
+                <h2>생년월일</h2>
+                <select name="year"> <!--!!!!!!name은 여기 이 자리에!!!!!!! 값이 넘어가기 위해서-->
+                    <option value="2019">2019년</option>
+                    <option value="2018">2018년</option>
+                    <option value="2017">2017년</option>
+                    <option value="2016">2016년</option>
+                    <option value="2015">2015년</option>
+                    <option selected value="2014">2014년</option> /*라디오나 체크박스의 checked와 같은 역할의 selected*/
+                </select>
+                <select name="month">
+                    <option value="1">1월</option>
+                    <option value="2">2월</option>
+                    <option value="3">3월</option>
+                    <option selected value="4">4월</option>
+                    <option value="5">5월</option>
+                    <option value="6">6월</option>
+                    <option value="7">7월</option>
+                    <option value="8">8월</option>
+                    <option value="9">9월</option>
+                    <option value="10">10월</option>
+                    <option value="11">11월</option>
+                    <option value="12">12월</option>
+                </select>
+                <select name="day">
+                    <option value="1">1일</option>
+                    <option value="2">2일</option>
+                    <option selected value="3">3일</option>
+                    <option value="4">4일</option>
+                    <option value="5">5일</option>
+                    <option value="6">6일</option>
+                    <option value="7">7일</option>
+                    <option value="8">8일</option>
+                    <option value="9">9일</option>
+                    <option value="10">10일</option>
+                    <option value="11">11일</option>
+                    <option value="12">12일</option>
+                    <option value="13">13일</option>
+                    <option value="14">14일</option>
+                    <option value="15">15일</option>
+                    <option value="16">16일</option>
+                    <option value="17">17일</option>
+                    <option value="18">18일</option>
+                    <option value="19">19일</option>
+                    <option value="20">20일</option>
+                    <option value="21">21일</option>
+                    <option value="22">22일</option>
+                    <option value="23">23일</option>
+                    <option value="24">24일</option>
+                    <option value="25">25일</option>
+                    <option value="26">26일</option>
+                    <option value="27">27일</option>
+                    <option value="28">28일</option>
+                    <option value="29">29일</option>
+                    <option value="30">30일</option>
+                    <option value="31">31일</option>
+                </select>
+            </div>
+            <div>
+                <h2>프로필 사진</h2>
+                <label><i class="far fa-image"></i>
+                    <input type="file"/>
+                </label>
+            </div>
+            <div>
+                <h2>상태메시지</h2>
+                <textarea name="message" placeholder="지금의 감정은?"></textarea>
+            </div>
+            <button type="submit">회원가입</button>
+        </fieldset>
+    </form>
+<!--
+    폼에서 사용하는 다양한 input 요소들
+    1) input type=text: 기본값(한 줄 입력)
+    2) input type=password: 비밀번호(한글입력 X)
+    3) input type=radio: 중복허용 X like 성별
+    - name 속성을 똑같게 - gender
+    - value 값도 작성해야 함 (like 성별 같이 입력요소가 아닌 것)
+    - checked 속성
+    4) input type=checkbox: 중복허용 O like 취미 or 관심사
+    - name 속성을 똑같게 - gender
+    - value 값도 작성해야 함 (like 성별 같이 입력요소가 아닌 것) => 서버로 직접 넘어가는 값
+    - checked 속성
+    5) select 요소: option 요소가 자식
+    6) input type=file
+
+    * 클라이언트에서 서버로 넘어가는 데이터가 파라미터
+
+    * 파라미터가 넘어가는 방식
+    GET: 주소로 넘어감, 주소창 노출 O
+    POST: http 프로토콜의 body로 넘어감, 주소창 노출 X
+    (PUT
+    DELETE)
+-->
+</body>
+</html>
