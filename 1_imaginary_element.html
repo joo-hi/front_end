@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .chat{
+            margin: 20px;
+            padding: 10px;
+            width: 150px; height: 60px;
+            background: bisque;
+            border-radius: 20px 20px 20px 20px;
+            position: relative; /*공간 가짐*/
+
+        }
+
+        .chat::after{
+            position: absolute;
+            content: " ";
+            display: block;
+            width: 0; height:0;
+            border-left: 35px solid bisque;
+            border-bottom: 35px solid transparent;
+            top: 0;
+            right: -20px;
+
+        }
+    </style>
+</head>
+<body>
+<div class="chat">html 재밌는데 은근 어렵지 않냐ㅠㅠ</div>
+</body>
+</html>
